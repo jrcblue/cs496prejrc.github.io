@@ -20,7 +20,7 @@ We use the ETH pedestrain trajectory dataset[3] as our training and test dataset
 
 ### Experiments
 
-We trained three different models including classification model, unimodal regression model and the regression + multimodal classification model. The training processes take around 20 epoches (~an hour) since the input and optimization object are simple. The average displacement error (ADE) and final displacement error (FDE) are commonly used to measure the prediction results (The smaller they are, the more accurate the prediction is). The results are shown in the follows. We could also put the trajectories onto the original bird-eye-view images[2]
+We trained three different models including classification model, unimodal regression model and the regression + multimodal classification model. The training processes take around 20 epoches (~an hour) since the input and optimization object are simple. The average displacement error (ADE) and final displacement error (FDE) are commonly used to measure the prediction results (The smaller they are, the more accurate the prediction is). The results are shown in the follows (also compared to the BERT-based model in the paper). We could also put the trajectories onto the original bird-eye-view images[2]
 
 The model combining the regression and multimodal classification performs better in terms of final displacement errors. However, all of the results are not as good as the LSTM ones. The possible reasons are that the SOTA LSTM models encode the context information and also our naive transformer is not specifically optimized for the motion prediction. 
 
