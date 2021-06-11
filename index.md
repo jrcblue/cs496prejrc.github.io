@@ -13,7 +13,7 @@ In our model, the input is the history two-dimensional Cartesian coordinates and
 It is always helpful to encode the context and social interaction of the agents, but we don't contain these information here since we need additional feature extractor such as GCN to do this. 
 
 To train the regression model, we directly use the L2 loss between the the predicted coordinates and the annotated positions. And for the classification tasks, we first cluster the trajectories into 1000 classes (potential anchors) represented as one-hot vectors. To train the multi-task models, we use the weighted sum of the L2 loss and cross-entropy loss as final loss function.
-
+![image](https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/eth.PNG)
 ### Dataset
 
 We use the ETH pedestrain trajectory dataset[3] as our training and test dataset. There are 12298 trajectories extracted from bird-eye-view images as shown in the figure. The input is the 8 pairs of coordinates in the past 3.2 seconds and the groundtruth is the 12 pairs in the future 4.8 seconds.  
