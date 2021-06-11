@@ -8,7 +8,7 @@ The trajectory prediction should be a multimodal problem by nature. Some works u
 ### Method
 The model is similar to the original transformer:  the embedding length is 512; it has 6-layer encoder and decoder with 8 attention heads.  we masked certain trajectory positions and the model will learn to predict it.
 
-<img width="350" height="250" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/TF_model.PNG"/>
+<div align=center><img width="500" height="350" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/TF_model.PNG" alt="the model"/></div>
 
 In our model, the input is the history two-dimensional Cartesian coordinates and we use a linear function to project them into the high dimentional embedding space. The position encoding uses trigonometric periodic functions to represent trajectory points' relative positions.
 
@@ -19,7 +19,7 @@ To train the regression model, we directly use the L2 loss between the the predi
 ### Dataset
 
 We use the ETH pedestrain trajectory dataset[3] as our training and test dataset. There are 12298 trajectories extracted from bird-eye-view images as shown in the figure. The input is the 8 pairs of coordinates in the past 3.2 seconds and the groundtruth is the 12 pairs in the future 4.8 seconds.  
-<div align=center><img width="250" height="250" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/eth.PNG"/></div>
+<div align=center><img width="200" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/eth.PNG"/></div>
 
 ### Experiments
 
@@ -32,9 +32,10 @@ The model combining the regression and multimodal classification performs better
 
 ### Conclusion and Future Plan
 This study shows the transformer can model the trajectries sequence well but I don't think this is a very efficient way to conduct multimodal predictions. And we also find most of the results are concentrated in a certain regions. Recently, some work[4] use region proposals and transformers to give prediction in different areas, and some works apply VAE to model the latent spaces as driver's intention.
-<img width="350" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/region_proposal_method.PNG"/>
+<div align=center>
+<img width="400" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/region_proposal_method.PNG"/>
 <img width="350" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/VAE.PNG"/>
-
+<\div>
 For the next step, I plan to use the transformer as trajectory encoder anc decoder and utilize the VAE model to conduct multimodal prediction. What's interesting is that we can build multiple latent space to model different attributes of agents (e.g. driving styles, intentions, classes of different vehicles). This can give us elaborate control of the prediction
  
 
