@@ -10,6 +10,7 @@ The model is similar to the original transformer:  the embedding length is 512; 
 
 <div align=center><img width="500" height="350" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/TF_model.PNG" alt="the model"/></div>
 
+![images/TF_model.PNG#pic_center = 500*350 ]
 In our model, the input is the history two-dimensional Cartesian coordinates and we use a linear function to project them into the high dimentional embedding space. The position encoding uses trigonometric periodic functions to represent trajectory points' relative positions.
 
 It is always helpful to encode the context and social interaction of the agents, but we don't contain these information here since we need additional feature extractor such as GCN to do this. 
