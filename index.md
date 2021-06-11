@@ -17,7 +17,7 @@ To train the regression model, we directly use the L2 loss between the the predi
 ### Dataset
 
 We use the ETH pedestrain trajectory dataset[3] as our training and test dataset. There are 12298 trajectories extracted from bird-eye-view images as shown in the figure. The input is the 8 pairs of coordinates in the past 3.2 seconds and the groundtruth is the 12 pairs in the future 4.8 seconds.  
-<img width="150" height="150" src="https://img-blog.csdn.net/20161028230559575"/>
+<img width="150" height="150" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/eth.PNG"/>
 ![image](images/eth.PNG）
 ### Experiments
 
