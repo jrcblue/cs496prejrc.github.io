@@ -35,7 +35,7 @@ This study shows the transformer can model the trajectries sequence well but I d
 <div align=center>
 <img width="400" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/region_proposal_method.PNG"/>
 <img width="350" height="200" src="https://github.com/jrcblue/cs496prejrc.github.io/blob/gh-pages/images/VAE.PNG"/>
-<\div>
+</div>
 For the next step, I plan to use the transformer as trajectory encoder anc decoder and utilize the VAE model to conduct multimodal prediction. What's interesting is that we can build multiple latent space to model different attributes of agents (e.g. driving styles, intentions, classes of different vehicles). This can give us elaborate control of the prediction
  
 
