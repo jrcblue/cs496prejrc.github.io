@@ -17,17 +17,18 @@ To train the regression model, we directly use the L2 loss between the the predi
 ### Dataset
 
 We use the ETH pedestrain trajectory dataset[3] as our training and test dataset. There are 12298 trajectories extracted from bird-eye-view images as shown in the figure. The input is the 8 pairs of coordinates in the past 3.2 seconds and the groundtruth is the 12 pairs in the future 4.8 seconds.  
-![image](images/eth.PNG){:height="70%" width="70%"}
+![image](images/eth.PNG）
 ### Experiments
 
 We trained three different models including classification model, unimodal regression model and the regression + multimodal classification model. The training processes take around 20 epoches (~an hour) since the input and optimization object are simple. The average displacement error (ADE) and final displacement error (FDE) are commonly used to measure the prediction results (The smaller they are, the more accurate the prediction is). The results are shown in the follows (also compared to the BERT-based model in the paper). We could also put the trajectories onto the original bird-eye-view images[2]
-![image](images/results.PNG){:height="70%" width="70%"}
-![image](images/MD_figure.PNG){:height="70%" width="70%"}
+![image](images/results.PNG)
+![image](images/MD_figure.PNG）
 The model combining the regression and multimodal classification performs better in terms of final displacement errors. However, all of the results are not as good as the LSTM ones. The possible reasons are that the SOTA LSTM models encode the context information and also our naive transformer is not specifically optimized for the motion prediction. 
 
 ### Conclusion and Future Plan
 This study shows the transformer can model the trajectries sequence well but I don't think this is a very efficient way to conduct multimodal predictions. And we also find most of the results are concentrated in a certain regions. Recently, some work[4] use region proposals and transformers to give prediction in different areas, and some works apply VAE to model the latent spaces as driver's intention.
-![image](images/VAE.PNG){:height="70%" width="70%"}
+![image](images/region_proposal.PNG)
+![image](images/VAE.PNG)
 For the next step, I plan to use the transformer as trajectory encoder anc decoder and utilize the VAE model to conduct multimodal prediction. What's interesting is that we can build multiple latent space to model different attributes of agents (e.g. driving styles, intentions, classes of different vehicles). This can give us elaborate control of the prediction
  
 
