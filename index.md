@@ -34,12 +34,17 @@ The model combining the regression and multimodal classification performs better
 ### Conclusion and Future Plan
 This study shows the transformer can model the trajectries sequence well but I don't think this is a very efficient way to conduct multimodal predictions. And we also find most of the results are concentrated in a certain regions. Recently, some work[4] use region proposals and transformers to give prediction in different areas, and some works apply VAE to model the latent spaces as driver's intention.
 <div align=center>
-<img width="400" height="200" src="images/region_proposal_method.PNG"/>
-<img width="350" height="200" src="images/VAE.PNG"/>
+<img width="400" height="250" src="images/region_proposal_method.PNG"/>
+<img width="350" height="250" src="images/VAE.PNG"/>
 </div>
 For the next step, I plan to use the transformer as trajectory encoder anc decoder and utilize the VAE model to conduct multimodal prediction. What's interesting is that we can build multiple latent space to model different attributes of agents (e.g. driving styles, intentions, classes of different vehicles). This can give us elaborate control of the prediction
  
+### References
+[1] Alahi, Alexandre, et al. "Social lstm: Human trajectory prediction in crowded spaces." Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.
 
+[2] Francesco Giuliari, Irtiza Hasan, Marco Cristani, and Fabio Galasso. Transformer networks for trajectory forecasting. arXiv preprint arXiv:2003.08111, 2020.
 
+[3] https://github.com/crowdbotp/OpenTraj
 
+[4] Liu, Yicheng, et al. "Multimodal Motion Prediction with Stacked Transformers." arXiv preprint arXiv:2103.11624 (2021).
 
