@@ -8,7 +8,7 @@ The trajectory prediction should be a multimodal problem by nature. Some works u
 ### Method
 The model is similar to the original transformer:  the embedding length is 512; it has 6-layer encoder and decoder with 8 attention heads.  we masked certain trajectory positions and the model will learn to predict it.
 
-<div align=center><img width="500" height="350" src="images/TF_model.PNG" alt="the model"/></div>
+<div align=center><img width="500" height="350" src="images/TF_model1.PNG" alt="the model"/></div>
 
 
 In our model, the input is the history two-dimensional Cartesian coordinates and we use a linear function to project them into the high dimentional embedding space. The position encoding uses trigonometric periodic functions to represent trajectory points' relative positions.
